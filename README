@@ -1,0 +1,14 @@
+1. always press "1" to choose "Multi-layer Perceptron" for transfer learning tasks. "radial basis function" network is used for regression and doesn't include any transfer learning/ensemble learning functionality. 
+
+2. the workflow using transferred correlation learning is
+   (1) load training data (press "1")
+   (2) Trcl (press "c")
+   (3) Press any key except "q" (press "q" anytime to quit) in the middle of neural network training to preceed to the training of another ensemble member until the validation results are printed out.
+
+3. For a normal ensemble learning without TrCL, the process is divided into two stages: training and validation. Press "2" to traing and then press "6" for validation. The parameter file with regard to the neural network ensemble is stored to the learning folder (currently "learning_error_archive"), so this folder must exist otherwise errors are reported. 
+
+4. Press "a" and "b" to see the results produced by TrAdaBoost and TrBagg for comparison. Press "d" to see the correlation/relatedness coefficients between reference networks.
+
+5. For testing different data sets with the same trained neural network, the training process doesn't need to be redundantly performed as the parameters can be saved. Press "3" to get the parameters and then press "6" for validation. 
+
+6. To change any parameter, the only way is to find them on the top of the source codes (sorry, currently there is no GUI and there is no argument associated with the executable either). To change the test data set, please find the function in main() (ann_ens_bp.cpp) and replace the read function (currently is read_mushroom_file(...))
